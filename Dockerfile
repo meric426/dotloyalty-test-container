@@ -4,8 +4,8 @@ MAINTAINER meric426 "https://github.com/meric426"
 
 # Install packages
 RUN apt-get update
-RUN apt-get install -y --force-yes build-essential curl git lftp sudo
-RUN apt-get install -y --force-yes zlib1g-dev libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev
+RUN apt-get install -y build-essential curl git lftp sudo
+RUN apt-get install -y zlib1g-dev libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev
 RUN apt-get clean
 
 # Install rbenv and ruby-build
