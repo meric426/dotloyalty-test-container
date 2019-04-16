@@ -8,6 +8,12 @@ RUN apt-get install -y build-essential curl git lftp sudo
 RUN apt-get install -y zlib1g-dev libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev libpq-dev
 RUN apt-get clean
 
+# tzdata
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get install tzdata
+RUN ln -fs /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
+RUN dpkg-reconfigure --frontend noninteractive tzdata
+
 # Install rbenv and ruby-build
 
 RUN git clone https://github.com/rbenv/rbenv.git /root/.rbenv
