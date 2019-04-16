@@ -31,3 +31,6 @@ RUN xargs -L 1 rbenv install < /root/ruby-versions.txt
 # Install Bundler for each version of ruby
 RUN echo 'gem: --no-rdoc --no-ri' >> /.gemrc
 RUN bash -l -c 'for v in $(cat /root/ruby-versions.txt); do rbenv global $v; gem install bundler; done'
+
+# imagemagick
+RUN apt-get install -y imagemagick
