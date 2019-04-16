@@ -34,3 +34,8 @@ RUN bash -l -c 'for v in $(cat /root/ruby-versions.txt); do rbenv global $v; gem
 
 # imagemagick
 RUN apt-get install -y imagemagick
+
+# aws-cli
+RUN apt-get install -y python-pip
+RUN pip install awscli --upgrade --user
+ENV PATH /root/.local/bin:$PATH
